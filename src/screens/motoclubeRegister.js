@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Text, StyleSheet, View, TextInput, TouchableOpacity, ScrollView, SafeAreaView } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
 import commonStyles from '../commonStyles';
 
 export default class motoclubeRegister extends Component {
@@ -28,8 +29,8 @@ export default class motoclubeRegister extends Component {
                     <Text style={styles.text2}>Logotipo:</Text>
                     <TouchableOpacity>
                         <View style={styles.button2}>
-                             <Text style={styles.buttonText}>
-                                Enviar
+                            <Text style={styles.buttonText2}>
+                                <Icon name="folder" size={20} /> Enviar
                             </Text>
                         </View>
                     </TouchableOpacity>
@@ -77,7 +78,7 @@ export default class motoclubeRegister extends Component {
 
 const styles = StyleSheet.create({
     background:{
-        flex: 1,
+        flexGrow: 1,
         width: '100%',
         alignItems: 'center',
         justifyContent: 'center'
@@ -88,7 +89,7 @@ const styles = StyleSheet.create({
     form:{
         justifyContent: 'center',
         padding: 20,
-        width: '90%',
+        width: '100%',
     },
     input:{
         color: commonStyles.colors.black,
@@ -107,11 +108,15 @@ const styles = StyleSheet.create({
         backgroundColor: commonStyles.colors.gray,
         marginBottom: 15,
         padding: 10,
-        alignItems: 'center',
+        alignItems: 'center'
     },
     buttonText:{
         color: commonStyles.colors.white,
         fontSize: 20,
+    },
+    buttonText2:{
+        color: commonStyles.colors.white,
+        fontSize: 15,
     },
     text:{
         marginBottom: 30,

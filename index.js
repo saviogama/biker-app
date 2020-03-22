@@ -3,12 +3,10 @@ import registerRootComponent from 'expo/build/launch/registerRootComponent';
 import { activateKeepAwake } from 'expo-keep-awake';
 
 import Routes from './src/routes';
-import Main from './src/screens/main';
-import { AppRegistry } from 'react-native';
-
+import Teste from './src/screens/newEvent';
 
 if (__DEV__) {
   activateKeepAwake();
 }
 
-registerRootComponent(Main);
+registerRootComponent(Teste);
