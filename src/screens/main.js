@@ -7,7 +7,7 @@ export default class Main extends Component {
     render() {
         return (
             <ImageBackground source={backgroundImage} style={styles.background}>
-                <Text style={styles.title}>
+                <Text style={styles.title} onPress={this.props.navigation.navigate('Auth')}>
                     BikerApp
                 </Text>
             </ImageBackground>

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { ImageBackground, Text, StyleSheet, View, TextInput, TouchableOpacity } from 'react-native';
 import backgroundImage from '../../assets/imgs/bikerappbg.png'
 import commonStyles from '../commonStyles'
+import AuthInput from '../components/authInput'
 
 export default class Auth extends Component {
 
@@ -19,10 +20,10 @@ export default class Auth extends Component {
                     </Text>
                 </View>
                 <View style={styles.form}>
-                    <TextInput placeholder='Email' value={this.state.email} 
+                    <AuthInput icon='user' placeholder='Email' value={this.state.email} 
                     style={styles.input} 
                     onChangeText={email => this.setState({ email })} />
-                    <TextInput placeholder='Senha' value={this.state.password} 
+                    <AuthInput icon='lock' placeholder='Senha' value={this.state.password} 
                     style={styles.input} secureTextEntry={true} 
                     onChangeText={password => this.setState({ password })} />
                     <TouchableOpacity>

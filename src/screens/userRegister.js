@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, StyleSheet, View, TextInput, TouchableOpacity } from 'react-native';
+import { Text, StyleSheet, View, TextInput, TouchableOpacity, ScrollView, SafeAreaView } from 'react-native';
 import commonStyles from '../commonStyles';
 
 export default class userRegister extends Component {
@@ -13,7 +13,8 @@ export default class userRegister extends Component {
 
     render(){
         return(
-            <View style={styles.background}>
+            <SafeAreaView style={styles.background}>
+            <ScrollView style={styles.scrollview}>
                 <View style={styles.form}>
                     <Text style={styles.text}> Novo usuário:</Text>
                     <Text style={styles.text2}>* Nome Completo:</Text>
@@ -44,22 +45,26 @@ export default class userRegister extends Component {
                         </View>
                     </TouchableOpacity>
                 </View>
-            </View>
+            </ScrollView>
+            </SafeAreaView>
         )
     }
 }
 
 const styles = StyleSheet.create({
     background:{
-        flex: 1,
+        flexGrow: 1,
         width: '100%',
         alignItems: 'center',
         justifyContent: 'center'
     },
+    scrollview:{
+        width: '100%',
+    },
     form:{
         justifyContent: 'center',
         padding: 20,
-        width: '90%',
+        width: '100%',
     },
     input:{
         color: commonStyles.colors.black,
