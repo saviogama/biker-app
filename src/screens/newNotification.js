@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Text, StyleSheet, View, TextInput, TouchableOpacity, ScrollView, SafeAreaView, Picker } from 'react-native';
+import { Button } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import commonStyles from '../commonStyles';
 
@@ -30,23 +31,16 @@ export default class newNotification extends Component {
                     <TextInput placeholder='Título' value={this.state.titulo} 
                     style={styles.input} 
                     onChangeText={titulo => this.setState({ titulo })} />
-                    <TouchableOpacity>
-                        <View style={styles.button2}>
-                            <Text style={styles.buttonText2}>
-                                <Icon name="folder" size={20} /> Selecionar imagem
-                            </Text>
-                        </View>
-                    </TouchableOpacity>
+                    <View style={styles.button2}>
+                        <Text style={styles.buttonText2}>
+                            <Icon name="folder" size={20} /> Selecionar imagem
+                        </Text>
+                    </View>
                     <TextInput placeholder='Mensagem' value={this.state.mensagem} 
                     style={styles.input2} 
                     multiline onChangeText={mensagem => this.setState({ mensagem })} value={this.state.mensagem} />
-                    <TouchableOpacity>
-                        <View style={styles.button}>
-                             <Text style={styles.buttonText}>
-                                Enviar
-                            </Text>
-                        </View>
-                    </TouchableOpacity>
+                    <Button title='Enviar'
+                        color='#009FEF'/>
                 </View>
             </ScrollView>
             </SafeAreaView>
