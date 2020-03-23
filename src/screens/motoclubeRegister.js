@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Text, StyleSheet, View, TextInput, TouchableOpacity, ScrollView, SafeAreaView } from 'react-native';
+import { Button } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import commonStyles from '../commonStyles';
 
@@ -28,8 +29,8 @@ export default class motoclubeRegister extends Component {
                     onChangeText={nome => this.setState({ nome })} />
                     <Text style={styles.text2}>Logotipo:</Text>
                     <TouchableOpacity>
-                        <View style={styles.button2}>
-                            <Text style={styles.buttonText2}>
+                        <View style={styles.button}>
+                            <Text style={styles.buttonText}>
                                 <Icon name="folder" size={20} /> Enviar
                             </Text>
                         </View>
@@ -62,13 +63,9 @@ export default class motoclubeRegister extends Component {
                     <TextInput placeholder='Estado' value={this.state.estado} 
                     style={styles.input} secureTextEntry={true} 
                     onChangeText={estado => this.setState({ estado })} />
-                    <TouchableOpacity>
-                        <View style={styles.button}>
-                             <Text style={styles.buttonText}>
-                                Confirmar
-                            </Text>
-                        </View>
-                    </TouchableOpacity>
+                    <Button title='Confirmar'
+                        color='#009FEF'
+                        onPress={() => this.props.navigation.navigate('userHome')}/>
                 </View>
             </ScrollView>
             </SafeAreaView>
@@ -99,22 +96,12 @@ const styles = StyleSheet.create({
         padding: 10
     },
     button:{
-        backgroundColor: commonStyles.colors.blue,
-        marginTop: 30,
-        padding: 10,
-        alignItems: 'center',
-    },
-    button2:{
         backgroundColor: commonStyles.colors.gray,
         marginBottom: 15,
         padding: 10,
         alignItems: 'center'
     },
     buttonText:{
-        color: commonStyles.colors.white,
-        fontSize: 20,
-    },
-    buttonText2:{
         color: commonStyles.colors.white,
         fontSize: 15,
     },

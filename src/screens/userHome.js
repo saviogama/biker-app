@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 import { ImageBackground, Text, StyleSheet } from 'react-native';
-import backgroundImage from '../../assets/imgs/bikerappbg.png'
 import commonStyles from '../commonStyles'
 
 export default class Main extends Component {
     render() {
         return (
-            <ImageBackground source={backgroundImage} style={styles.background} >
-                <Text style={styles.title} onPress={() => this.props.navigation.navigate('Auth')}>
-                    BikerApp
+            <ImageBackground style={styles.background} >
+                <Text style={styles.title}>
+                    Você está logado!
                 </Text>
             </ImageBackground>
         )
@@ -23,7 +22,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center'
     },
     title:{
-        color: commonStyles.colors.white,
+        color: commonStyles.colors.black,
         alignItems: 'center',
         justifyContent: 'center',
         fontSize: 30

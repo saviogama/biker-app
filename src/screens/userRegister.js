@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Text, StyleSheet, View, TextInput, TouchableOpacity, ScrollView, SafeAreaView } from 'react-native';
+import { Text, StyleSheet, View, TextInput, ScrollView, SafeAreaView } from 'react-native';
+import { Button } from 'react-native-elements';
 import commonStyles from '../commonStyles';
 
 export default class userRegister extends Component {
@@ -37,13 +38,9 @@ export default class userRegister extends Component {
                     <TextInput placeholder='Repetir Senha' value={this.state.password} 
                     style={styles.input} secureTextEntry={true} 
                     onChangeText={password => this.setState({ password })} />
-                    <TouchableOpacity>
-                        <View style={styles.button}>
-                             <Text style={styles.buttonText} onPress={this.props.navigation.navigate('motoclubeRegister')}>
-                                Confirmar
-                            </Text>
-                        </View>
-                    </TouchableOpacity>
+                    <Button title='Confirmar'
+                        color='#009FEF'
+                        onPress={() => this.props.navigation.navigate('motoclubeRegister')}/>
                 </View>
             </ScrollView>
             </SafeAreaView>
@@ -72,16 +69,6 @@ const styles = StyleSheet.create({
         borderColor: commonStyles.colors.black,
         borderWidth: 1,
         padding: 10
-    },
-    button:{
-        backgroundColor: commonStyles.colors.blue,
-        marginTop: 30,
-        padding: 10,
-        alignItems: 'center',
-    },
-    buttonText:{
-        color: commonStyles.colors.white,
-        fontSize: 20,
     },
     text:{
         marginBottom: 30,
