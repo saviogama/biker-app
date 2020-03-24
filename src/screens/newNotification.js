@@ -23,8 +23,9 @@ export default class newNotification extends Component {
                             onValueChange={(itemValue, itemIndex) =>
                                 this.setState({language: itemValue})
                             }>
-                            <Picker.Item label="Java" value="java" />
-                            <Picker.Item label="JavaScript" value="js" />
+                            <Picker.Item label="Anúncio" value="anuncio" />
+                            <Picker.Item label="Lembrete" value="lembrete" />
+                            <Picker.Item label="Advertência" value="advertencia" />
                         </Picker>
                     </View>
                     <Text style={styles.text}>Título:</Text>
