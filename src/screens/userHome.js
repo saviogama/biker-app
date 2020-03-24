@@ -8,53 +8,54 @@ const theme = {
     Button: {
       titleStyle: {
         color: 'black',
+        fontSize: 15
       },
     },
 };
 
-export default class Main extends Component {
+export default class userHome extends Component {
     render() {
         return (
             <SafeAreaView style={styles.background}>
-            <ScrollView style={styles.scrollview}>
                 <Header
                     centerComponent={{ text: 'Painel de Controle', style: { color: commonStyles.colors.white, fontSize: 18, fontWeight: 'bold' } }}
                     containerStyle={{
-                        backgroundColor: commonStyles.colors.blue,
+                        backgroundColor: commonStyles.colors.darkGray,
                         justifyContent: 'space-around',
                     }}
                 />
-                <View style={styles.title}>
-                    <Avatar size='large' rounded title='MC'/>
-                    <Text style={styles.titleText}>
-                        Motoclube com um nome gigante
-                    </Text>
-                </View>
-                <View style={styles.button}>
-                    <Avatar rounded icon={{name: 'bars', color: 'black', type: 'font-awesome'}}/>
-                    <ThemeProvider theme={theme}>
-                        <Button title='Menu' type='clear'  onPress={() => this.props.navigation.dispatch(DrawerActions.openDrawer()) }/>
-                    </ThemeProvider>
-                </View>
-                <View style={styles.button}>
-                    <Avatar rounded icon={{name: 'pencil', color: 'black', type: 'font-awesome'}}/>
-                    <ThemeProvider theme={theme}>
-                        <Button title='Escrever Notificação' type='clear' onPress={() => this.props.navigation.navigate('newNotification')}/>
-                    </ThemeProvider>
-                </View>
-                <View style={styles.button}>
-                    <Avatar rounded icon={{name: 'calendar', color: 'black', type: 'font-awesome'}}/>
-                    <ThemeProvider theme={theme}>
-                        <Button title='Criar Evento' type='clear' onPress={() => this.props.navigation.navigate('newEvent')}/>
-                    </ThemeProvider>
-                </View>
-                <View style={styles.button}>
-                    <Avatar rounded icon={{name: 'line-chart', color: 'black', type: 'font-awesome'}}/>
-                    <ThemeProvider theme={theme}>
-                        <Button title='Dados sobre Eventos' type='clear'/>
-                    </ThemeProvider>
-                </View>
-            </ScrollView>
+                <ScrollView style={styles.scrollview}>
+                    <View style={styles.title}>
+                        <Avatar size='large' rounded title='MC'/>
+                        <Text style={styles.titleText}>
+                            Motoclube 1
+                        </Text>
+                    </View>
+                    <View style={styles.button}>
+                        <Avatar rounded icon={{name: 'bars', color: 'black', type: 'font-awesome'}}/>
+                        <ThemeProvider theme={theme}>
+                            <Button title='Menu' type='clear'  onPress={() => this.props.navigation.dispatch(DrawerActions.openDrawer()) }/>
+                        </ThemeProvider>
+                    </View>
+                    <View style={styles.button}>
+                        <Avatar rounded icon={{name: 'pencil', color: 'black', type: 'font-awesome'}}/>
+                        <ThemeProvider theme={theme}>
+                            <Button title='Escrever Notificação' type='clear' onPress={() => this.props.navigation.navigate('newNotification')}/>
+                        </ThemeProvider>
+                    </View>
+                    <View style={styles.button}>
+                        <Avatar rounded icon={{name: 'calendar', color: 'black', type: 'font-awesome'}}/>
+                        <ThemeProvider theme={theme}>
+                            <Button title='Criar Evento' type='clear' onPress={() => this.props.navigation.navigate('newEvent')}/>
+                        </ThemeProvider>
+                    </View>
+                    <View style={styles.button}>
+                        <Avatar rounded icon={{name: 'bar-chart', color: 'black', type: 'font-awesome'}}/>
+                        <ThemeProvider theme={theme}>
+                            <Button title='Dados sobre Eventos' type='clear' onPress={() => this.props.navigation.navigate('eventData')}/>
+                        </ThemeProvider>
+                    </View>
+                </ScrollView>
             </SafeAreaView>
         )
     }
@@ -87,16 +88,11 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     button:{
-        marginLeft: '15%',
+        marginLeft: '18%',
         paddingVertical: 15,
         paddingHorizontal: 10,
         flexDirection: 'row',
         justifyContent: 'flex-start',
         alignItems: 'center'
-    },
-    buttonText:{
-        color: commonStyles.colors.black,
-        fontSize: 15,
-        marginLeft: 15
     }
 })

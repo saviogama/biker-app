@@ -34,28 +34,28 @@ export default class userConfig extends Component {
     render() {
         return (
           <SafeAreaView style={styles.background}>
-          <ScrollView style={styles.scrollview}>
             <Header
               centerComponent={{ text: 'Configurações', style: { color: commonStyles.colors.white, fontSize: 18, fontWeight: 'bold' } }}
               containerStyle={{
-                backgroundColor: commonStyles.colors.blue,
+                backgroundColor: commonStyles.colors.darkGray,
                 justifyContent: 'space-around',
               }}
             />
-            <View style={styles.background}>
-              {
-                list.map((item, i) => (
-                  <ListItem
-                      key={i}
-                      title={item.title}
-                      leftIcon={{ name: item.icon }}
-                      bottomDivider
-                      chevron
-                  />
-                ))
-              }
-            </View>
-          </ScrollView>
+            <ScrollView style={styles.scrollview}>
+              <View style={styles.background}>
+                {
+                  list.map((item, i) => (
+                    <ListItem
+                        key={i}
+                        title={item.title}
+                        leftIcon={{ name: item.icon }}
+                        bottomDivider
+                        chevron
+                    />
+                  ))
+                }
+              </View>
+            </ScrollView>
           </SafeAreaView>
         )
     }
