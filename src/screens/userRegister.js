@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
     text:{
         marginBottom: 30,
         marginTop: 5,
-        fontSize: 18
+        fontSize: 15
     },
     text2:{
         marginBottom: 5

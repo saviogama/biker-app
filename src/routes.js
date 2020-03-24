@@ -1,7 +1,7 @@
 import React from 'react';
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
-import { createDrawerNavigator, DrawerItems } from 'react-navigation-drawer';
+import { createDrawerNavigator, DrawerItems, DrawerActions } from 'react-navigation-drawer';
 import { Text, View } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import 'react-native-gesture-handler'
@@ -12,6 +12,8 @@ import motoclubeRegister from './screens/motoclubeRegister';
 import newNotification from './screens/newNotification';
 import newEvent from './screens/newEvent';
 import userHome from './screens/userHome';
+import userConfig from './screens/userConfig';
+import commonStyles from './commonStyles';
 
 const DrawerContent = (props) => (
   <View>
@@ -61,12 +63,16 @@ const menuScreens = {
       drawerIcon: (<Icon name="coins" size={20} />)
     }
   },
-  Configs:{
+  */
+  Config:{
+    name: 'userConfig',
+    screen: userConfig,
     navigationOptions:{
       title: 'Configurações',
       drawerIcon: (<Icon name="cog" size={20} />)
     }
   },
+  /*
   Profile:{
     navigationOptions:{
       title: 'Perfil',
@@ -99,36 +105,83 @@ const mainScreens = {
         name: 'userRegister',
         screen: userRegister,
         navigationOptions: {
-            title: 'Registre-se'
+            title: 'Registre-se',
+            headerTintColor: commonStyles.colors.white,
+            headerStyle: {
+              backgroundColor: commonStyles.colors.blue,
+            },
+            headerTitleStyle: {
+              fontSize: 18,
+              color: commonStyles.colors.white
+            },
         }
     },
     motoclubeRegister: {
         name: 'motoclubeRegister',
         screen: motoclubeRegister,
         navigationOptions: {
-            title: 'Cadastro'
+            title: 'Cadastro',
+            headerTintColor: commonStyles.colors.white,
+            headerStyle: {
+              backgroundColor: commonStyles.colors.blue,
+            },
+            headerTitleStyle: {
+              fontSize: 18,
+              color: commonStyles.colors.white
+            },
         }
     },
     userHome: {
       name: 'userHome',
-        screen: menuRoutes,
-        navigationOptions: {
-            headerShown: false
-        }
+      screen: menuRoutes,
+      navigationOptions: {
+          headerShown: false
+      }
     },
     newNotification: {
         name: 'newNotification',
         screen: newNotification,
         navigationOptions: {
-            title: 'Escrever Notificação'
+            title: 'Escrever Notificação',
+            headerTintColor: commonStyles.colors.white,
+            headerStyle: {
+              backgroundColor: commonStyles.colors.blue,
+            },
+            headerTitleStyle: {
+              fontSize: 18,
+              color: commonStyles.colors.white
+            },
         }
     },
     newEvent: {
         name: 'newEvent',
         screen: newEvent,
         navigationOptions: {
-            title: 'Novo Evento'
+            title: 'Novo Evento',
+            headerTintColor: commonStyles.colors.white,
+            headerStyle: {
+              backgroundColor: commonStyles.colors.blue,
+            },
+            headerTitleStyle: {
+              fontSize: 18,
+              color: commonStyles.colors.white
+            },
         }
+    },
+    userConfig: {
+      name: 'userConfig',
+      screen: userConfig,
+      navigationOptions: {
+          title: 'Configurações',
+          headerTintColor: commonStyles.colors.white,
+          headerStyle: {
+            backgroundColor: commonStyles.colors.blue,
+          },
+          headerTitleStyle: {
+            fontSize: 18,
+            color: commonStyles.colors.white
+          },
+      }
     }
 };
 
