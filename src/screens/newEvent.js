@@ -23,13 +23,13 @@ export default class newEvent extends Component {
                     style={styles.input} 
                     onChangeText={titulo => this.setState({ titulo })} />
                     <Text style={styles.text}>Data:</Text>
-                    <TextInput placeholder='01/01/0001' value={this.state.titulo} 
+                    <TextInput placeholder='01/01/0001' value={this.state.data} 
                     style={styles.input} 
-                    onChangeText={titulo => this.setState({ titulo })} />
+                    onChangeText={data => this.setState({ data })} />
                     <Text style={styles.text}>Hora:</Text>
-                    <TextInput placeholder='00:00' value={this.state.titulo} 
+                    <TextInput placeholder='00:00' value={this.state.hora} 
                     style={styles.input} 
-                    onChangeText={titulo => this.setState({ titulo })} />
+                    onChangeText={hora => this.setState({ hora })} />
                     <View style={styles.button}>
                         <Text style={styles.buttonText}>
                             <Icon name="folder" size={20} /> Selecionar imagem
