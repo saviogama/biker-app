@@ -40,6 +40,7 @@ const menuScreens = {
       drawerIcon: (<Icon name="home" size={20} />)
     }
   },
+  /*
   Notification:{
     name: 'newNotification',
     screen: newNotification,
@@ -48,7 +49,6 @@ const menuScreens = {
       drawerIcon: (<Icon name="bell" size={20} />)
     }
   },
-  /*
   Mensages:{
     navigationOptions:{
       title: 'Mensagens',
@@ -120,14 +120,14 @@ const mainScreens = {
         name: 'newNotification',
         screen: newNotification,
         navigationOptions: {
-            title: 'Escrever notificação'
+            title: 'Escrever Notificação'
         }
     },
     newEvent: {
         name: 'newEvent',
         screen: newEvent,
         navigationOptions: {
-            title: 'Escrever notificação'
+            title: 'Novo Evento'
         }
     }
 };
