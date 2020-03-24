@@ -28,13 +28,11 @@ export default class motoclubeRegister extends Component {
                     style={styles.input} 
                     onChangeText={nome => this.setState({ nome })} />
                     <Text style={styles.text2}>Logotipo:</Text>
-                    <TouchableOpacity>
-                        <View style={styles.button}>
-                            <Text style={styles.buttonText}>
-                                <Icon name="folder" size={20} /> Enviar
-                            </Text>
-                        </View>
-                    </TouchableOpacity>
+                    <View style={styles.button}>
+                        <Text style={styles.buttonText}>
+                            <Icon name="folder" size={20} /> Enviar
+                        </Text>
+                    </View>
                     <Text style={styles.text2}>Logradouro:</Text>
                     <TextInput placeholder='Logradouro' value={this.state.logradouro} 
                     style={styles.input} 

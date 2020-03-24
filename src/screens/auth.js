@@ -1,9 +1,17 @@
 import React, { Component } from 'react';
 import { ImageBackground, Text, StyleSheet, View } from 'react-native';
-import { Button } from 'react-native-elements'
+import { Button, ThemeProvider } from 'react-native-elements'
 import backgroundImage from '../../assets/imgs/bikerappbg.png'
 import commonStyles from '../commonStyles'
 import AuthInput from '../components/authInput'
+
+const theme = {
+    Button: {
+      titleStyle: {
+        color: 'white',
+      },
+    },
+};
 
 export default class Auth extends Component {
 
@@ -33,14 +41,14 @@ export default class Auth extends Component {
                 </View>
                 <View style={styles.link}>
                     <View>
-                        <Text style={styles.buttonText}>
-                            Esqueci minha senha
-                        </Text>
+                        <ThemeProvider theme={theme}>
+                            <Button title='Esqueci minha senha' type='clear'/>
+                        </ThemeProvider>
                     </View>
                     <View>
-                        <Text style={styles.buttonText} onPress={() => this.props.navigation.navigate('userRegister')}>
-                            Registre-se
-                        </Text>
+                        <ThemeProvider theme={theme}>
+                            <Button title='Registre-se' type='clear' onPress={() => this.props.navigation.navigate('userRegister')}/>
+                        </ThemeProvider>
                     </View>
                 </View>
             </ImageBackground>
@@ -78,11 +86,6 @@ const styles = StyleSheet.create({
         marginBottom: 10,
         borderBottomColor: commonStyles.colors.white, 
         borderBottomWidth: 1
-    },
-    buttonText:{
-        color: commonStyles.colors.white,
-        fontSize: 15,
-        marginBottom: 15
     },
     link:{
         justifyContent: 'flex-end',
