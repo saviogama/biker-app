@@ -37,7 +37,7 @@ export default class Auth extends Component {
                     onChangeText={password => this.setState({ password })} />
                     <Button title='Entrar'
                         color='#009FEF'
-                        onPress={() => this.props.navigation.navigate('userHome')}/>
+                        onPress={() => this.props.navigation.navigate('Code')}/>
                 </View>
                 <View style={styles.link}>
                     <View>

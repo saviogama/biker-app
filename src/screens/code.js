@@ -1,8 +1,17 @@
 import React, { Component } from 'react';
-import { ImageBackground, Text, StyleSheet, View, TextInput, TouchableOpacity, Image } from 'react-native';
+import { ImageBackground, Text, StyleSheet, View, TextInput, Image } from 'react-native';
+import { Button, ThemeProvider } from 'react-native-elements';
 import backgroundImage from '../../assets/imgs/bikerappbg.png';
 import codeImage from '../../assets/imgs/codebar.png';
 import commonStyles from '../commonStyles';
+
+const theme = {
+    Button: {
+      titleStyle: {
+        color: 'white',
+      },
+    },
+};
 
 export default class Code extends Component {
 
@@ -26,22 +35,16 @@ export default class Code extends Component {
                     <TextInput placeholder='Código' value={this.state.code} 
                     style={styles.input} 
                     onChangeText={code => this.setState({ code })} />
-                    <TouchableOpacity>
-                        <View style={styles.button}>
-                            <Text style={styles.buttonText}>
-                                Validar
-                            </Text>
-                        </View>
-                    </TouchableOpacity>
+                    <Button title='Validar'
+                        color='#009FEF'
+                        onPress={() => this.props.navigation.navigate('userHome')}/>
                 </View>
                 <View style={styles.link}>
-                    <TouchableOpacity>
-                        <View>
-                            <Text style={styles.buttonText2}>
-                                Não tenho o código
-                            </Text>
-                        </View>
-                    </TouchableOpacity>
+                    <View>
+                        <ThemeProvider theme={theme}>
+                            <Button title='Não tenho o código' type='clear' onPress={() => this.props.navigation.navigate('motoclubeRegister')}/>
+                        </ThemeProvider>
+                    </View>
                 </View>
             </ImageBackground>
         )
@@ -72,26 +75,12 @@ const styles = StyleSheet.create({
     },
     input:{
         backgroundColor: commonStyles.colors.white,
-        color: commonStyles.colors.white,
+        color: commonStyles.colors.black,
         marginTop: 20,
+        marginBottom: 20,
         borderColor: commonStyles.colors.white,
         borderWidth: 1,
         padding: 10
-    },
-    button:{
-        backgroundColor: commonStyles.colors.blue,
-        marginTop: 30,
-        padding: 10,
-        alignItems: 'center',
-    },
-    buttonText:{
-        color: commonStyles.colors.white,
-        fontSize: 20,
-    },
-    buttonText2:{
-        color: commonStyles.colors.white,
-        fontSize: 15,
-        marginBottom: 15
     },
     link:{
         justifyContent: 'flex-end',

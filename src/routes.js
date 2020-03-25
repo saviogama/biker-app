@@ -7,6 +7,7 @@ import Icon from 'react-native-vector-icons/FontAwesome5';
 import 'react-native-gesture-handler'
 import Main from './screens/main';
 import Auth from './screens/auth';
+import Code from './screens/code';
 import userRegister from './screens/userRegister';
 import motoclubeRegister from './screens/motoclubeRegister';
 import newNotification from './screens/newNotification';
@@ -15,9 +16,11 @@ import userHome from './screens/userHome';
 import userConfig from './screens/userConfig';
 import eventData from './screens/eventData';
 import eventDataDetails from './screens/eventDataDetails';
-import financial from './screens/financial';
-import events from './screens/events';
-import notifications from './screens/notifications';
+import Financial from './screens/financial';
+import Events from './screens/events';
+import Notifications from './screens/notifications';
+import Messages from './screens/messages';
+import userProfile from './screens/userProfile';
 import commonStyles from './commonStyles';
 
 const DrawerContent = (props) => (
@@ -48,32 +51,32 @@ const menuScreens = {
     }
   },
   Events:{
-    name: 'events',
-    screen: events,
+    name: 'Events',
+    screen: Events,
     navigationOptions:{
       title: 'Eventos',
       drawerIcon: (<Icon name="calendar" size={20} />)
     }
   },
   Notifications:{
-    name: 'notifications',
-    screen: notifications,
+    name: 'Notifications',
+    screen: Notifications,
     navigationOptions:{
       title: 'Notificações',
       drawerIcon: (<Icon name="bell" size={20} />)
     }
   },
-  /*
-  Mensages:{
+  Messages:{
+    name: 'Messages',
+    screen: Messages,
     navigationOptions:{
       title: 'Mensagens',
       drawerIcon: (<Icon name="envelope" size={20} />)
     }
   },
-  */
   Financial:{
-    name: 'financial',
-    screen: financial,
+    name: 'Financial',
+    screen: Financial,
     navigationOptions:{
       title: 'Financeiro',
       drawerIcon: (<Icon name="coins" size={20} />)
@@ -87,14 +90,14 @@ const menuScreens = {
       drawerIcon: (<Icon name="cog" size={20} />)
     }
   },
-  /*
-  Profile:{
+  userrofile:{
+    name: 'userProfile',
+    screen: userProfile,
     navigationOptions:{
       title: 'Perfil',
       drawerIcon: (<Icon name="user" size={20} />)
     }
   }
-  */
 }
 
 const menuRoutes = createDrawerNavigator(menuScreens, {
@@ -115,6 +118,13 @@ const mainScreens = {
         navigationOptions: {
             headerShown: false
         }
+    },
+    Code: {
+      name: 'Code',
+      screen: Code,
+      navigationOptions: {
+          headerShown: false
+      }
     },
     userRegister: {
         name: 'userRegister',
@@ -228,9 +238,9 @@ const mainScreens = {
           },
       }
     },
-    financial: {
-      name: 'financial',
-      screen: financial,
+    Financial: {
+      name: 'Financial',
+      screen: Financial,
       navigationOptions: {
           title: 'Financeiro',
           headerTintColor: commonStyles.colors.white,
@@ -243,9 +253,9 @@ const mainScreens = {
           },
       }
     },
-    events: {
-      name: 'events',
-      screen: events,
+    Events: {
+      name: 'Events',
+      screen: Events,
       navigationOptions: {
           title: 'Eventos',
           headerTintColor: commonStyles.colors.white,
@@ -258,11 +268,41 @@ const mainScreens = {
           },
       }
     },
-    notifications: {
-      name: 'notifications',
-      screen: notifications,
+    Notifications: {
+      name: 'Notifications',
+      screen: Notifications,
       navigationOptions: {
           title: 'Notificações',
+          headerTintColor: commonStyles.colors.white,
+          headerStyle: {
+            backgroundColor: commonStyles.colors.darkGray,
+          },
+          headerTitleStyle: {
+            fontSize: 18,
+            color: commonStyles.colors.white
+          },
+      }
+    },
+    Messages: {
+      name: 'Messages',
+      screen: Messages,
+      navigationOptions: {
+          title: 'Mensagens',
+          headerTintColor: commonStyles.colors.white,
+          headerStyle: {
+            backgroundColor: commonStyles.colors.darkGray,
+          },
+          headerTitleStyle: {
+            fontSize: 18,
+            color: commonStyles.colors.white
+          },
+      }
+    },
+    userProfile: {
+      name: 'userProfile',
+      screen: userProfile,
+      navigationOptions: {
+          title: 'Perfil',
           headerTintColor: commonStyles.colors.white,
           headerStyle: {
             backgroundColor: commonStyles.colors.darkGray,
