@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, ScrollView, SafeAreaView } from 'react-native';
-import Card from '../components/eventCardInput'
+import Card from '../components/eventDataInput'
 
 export default class eventData extends Component {
     render() {

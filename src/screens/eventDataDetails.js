@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, ScrollView, SafeAreaView } from 'react-native';
 import { ListItem } from 'react-native-elements'
-import Card from '../components/eventCardDetailsInput'
+import Card from '../components/eventDataDetailsInput'
 
 export default class eventDataDetails extends Component {
     render() {

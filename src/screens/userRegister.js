@@ -40,7 +40,7 @@ export default class userRegister extends Component {
                     onChangeText={password => this.setState({ password })} />
                     <Button title='Confirmar'
                         color='#009FEF'
-                        onPress={() => this.props.navigation.navigate('motoclubeRegister')}/>
+                        onPress={() => this.props.navigation.navigate('Code')}/>
                 </View>
             </ScrollView>
             </SafeAreaView>

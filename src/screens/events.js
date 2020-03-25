@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { StyleSheet, ScrollView, SafeAreaView } from 'react-native';
 import { Header } from 'react-native-elements'
 import commonStyles from '../commonStyles'
-import Card from '../components/eventInput'
+import Card from '../components/eventCardInput'
 
 export default class Events extends Component {
     render() {
