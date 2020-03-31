@@ -15,7 +15,7 @@ const theme = {
 export default props => {
     return (
         <Card
-            containerStyle={{backgroundColor: commonStyles.colors.blue}}
+            containerStyle={{backgroundColor: commonStyles.colors.blue, marginBottom: 3}}
             >
             <View style={styles.button}>
                 <Avatar rounded size='medium' icon={{name: 'user', color: 'black', type: 'font-awesome'}}/>

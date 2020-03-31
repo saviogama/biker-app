@@ -14,6 +14,7 @@ const theme = {
 export default props => {
     return (
         <Card
+            containerStyle={{marginBottom: 3}}
             title='99º TITULO LONGO DE CARUARU-PE'
             >
             <View style={styles.button}>

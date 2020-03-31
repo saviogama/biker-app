@@ -21,6 +21,7 @@ import Events from './screens/events';
 import Notifications from './screens/notifications';
 import Messages from './screens/messages';
 import userProfile from './screens/userProfile';
+import Feed from './screens/feed';
 import commonStyles from './commonStyles';
 
 const DrawerContent = (props) => (
@@ -42,12 +43,20 @@ const DrawerContent = (props) => (
 )
 
 const menuScreens = {
+  Feed:{
+    name: 'Feed',
+    screen: Feed,
+    navigationOptions:{
+      title: 'Feed',
+      drawerIcon: (<Icon name="home" size={20} />)
+    }
+  },
   userHome:{
     name: 'userHome',
     screen: userHome,
     navigationOptions:{
-      title: 'Home',
-      drawerIcon: (<Icon name="home" size={20} />)
+      title: 'Painel de Controle',
+      drawerIcon: (<Icon name="tasks" size={20} />)
     }
   },
   Events:{
@@ -158,7 +167,7 @@ const mainScreens = {
     },
     userHome: {
       name: 'userHome',
-      screen: menuRoutes,
+      screen: userHome,
       navigationOptions: {
           headerShown: false
       }
@@ -311,6 +320,13 @@ const mainScreens = {
             fontSize: 18,
             color: commonStyles.colors.white
           },
+      }
+    },
+    Feed: {
+      name: 'Feed',
+      screen: menuRoutes,
+      navigationOptions: {
+        headerShown: false
       }
     }
 };
