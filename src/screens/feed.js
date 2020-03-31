@@ -2,24 +2,27 @@ import React, { Component } from 'react';
 import { StyleSheet, ScrollView, SafeAreaView } from 'react-native';
 import { Header } from 'react-native-elements'
 import commonStyles from '../commonStyles'
-import Card from '../components/eventCardInput'
+import Notification from '../components/notificationInput'
+import Event from '../components/eventCardInput'
 
-export default class Events extends Component {
+export default class Feed extends Component {
     render() {
         return (
             <SafeAreaView style={styles.background}>
                 <Header
-                    centerComponent={{ text: 'Eventos', style: { color: commonStyles.colors.white, fontSize: 18, fontWeight: 'bold' } }}
+                    centerComponent={{ text: 'Feed', style: { color: commonStyles.colors.white, fontSize: 18, fontWeight: 'bold' } }}
                     containerStyle={{
                         backgroundColor: commonStyles.colors.darkGray,
                         justifyContent: 'space-around',
                     }}
                 />
                 <ScrollView style={styles.scrollview}>
-                    <Card/>
-                    <Card/>
-                    <Card/>
-                    <Card/>
+                    <Notification/>
+                    <Event/>
+                    <Event/>
+                    <Notification/>
+                    <Notification/>
+                    <Event/>
                 </ScrollView>
             </SafeAreaView>
         )

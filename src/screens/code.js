@@ -37,7 +37,7 @@ export default class Code extends Component {
                     onChangeText={code => this.setState({ code })} />
                     <Button title='Validar'
                         color='#009FEF'
-                        onPress={() => this.props.navigation.navigate('userHome')}/>
+                        onPress={() => this.props.navigation.navigate('Feed')}/>
                 </View>
                 <View style={styles.link}>
                     <View>

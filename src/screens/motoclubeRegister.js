@@ -63,7 +63,7 @@ export default class motoclubeRegister extends Component {
                     onChangeText={estado => this.setState({ estado })} />
                     <Button title='Confirmar'
                         color='#009FEF'
-                        onPress={() => this.props.navigation.navigate('userHome')}/>
+                        onPress={() => this.props.navigation.navigate('Feed')}/>
                 </View>
             </ScrollView>
             </SafeAreaView>

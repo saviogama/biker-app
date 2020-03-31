@@ -15,8 +15,8 @@ export default class Messages extends Component {
               }}
             />
             <ScrollView style={styles.scrollview}>
-              <Text>
-                Tela mensagens
+              <Text style={styles.title}>
+                Em construção c=
               </Text>
             </ScrollView>
           </SafeAreaView>
@@ -31,5 +31,11 @@ const styles = StyleSheet.create({
   },
   scrollview:{
     width: '100%',
+  },
+  title:{
+    color: commonStyles.colors.black,
+    alignItems: 'center',
+    justifyContent: 'center',
+    fontSize: 30
   }
 })
