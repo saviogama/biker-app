@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, StyleSheet, View, TextInput, TouchableOpacity, ScrollView, SafeAreaView, Picker } from 'react-native';
+import { Text, StyleSheet, View, TextInput, ScrollView, SafeAreaView, Picker, KeyboardAvoidingView } from 'react-native';
 import { Button } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import commonStyles from '../commonStyles';
@@ -14,42 +14,47 @@ export default class newNotification extends Component {
 
     render(){
         return(
-            <SafeAreaView style={styles.background}>
-            <ScrollView style={styles.scrollview}>
-                <View style={styles.form}>
-                    <View style={styles.picker}>
-                        <Picker
-                            selectedValue={this.state.language}
-                            onValueChange={(itemValue, itemIndex) =>
-                                this.setState({language: itemValue})
-                            }>
-                            <Picker.Item label="Anúncio" value="anuncio" />
-                            <Picker.Item label="Lembrete" value="lembrete" />
-                            <Picker.Item label="Advertência" value="advertencia" />
-                        </Picker>
-                    </View>
-                    <Text style={styles.text}>Título:</Text>
-                    <TextInput placeholder='Título' value={this.state.titulo} 
-                    style={styles.input} 
-                    onChangeText={titulo => this.setState({ titulo })} />
-                    <View style={styles.button2}>
-                        <Text style={styles.buttonText2}>
-                            <Icon name="folder" size={20} /> Selecionar imagem
-                        </Text>
-                    </View>
-                    <TextInput placeholder='Mensagem' value={this.state.mensagem} 
-                    style={styles.input2} 
-                    multiline onChangeText={mensagem => this.setState({ mensagem })} value={this.state.mensagem} />
-                    <Button title='Enviar'
-                        color='#009FEF'/>
-                </View>
-            </ScrollView>
-            </SafeAreaView>
+            <KeyboardAvoidingView behavior="padding" keyboardVerticalOffset={80} style={styles.container}>
+                <SafeAreaView style={styles.background}>
+                    <ScrollView style={styles.scrollview}>
+                        <View style={styles.form}>
+                            <View style={styles.picker}>
+                                <Picker
+                                    selectedValue={this.state.language}
+                                    onValueChange={(itemValue, itemIndex) =>
+                                        this.setState({language: itemValue})
+                                    }>
+                                    <Picker.Item label="Anúncio" value="anuncio" />
+                                    <Picker.Item label="Lembrete" value="lembrete" />
+                                    <Picker.Item label="Advertência" value="advertencia" />
+                                </Picker>
+                            </View>
+                            <Text style={styles.text}>Título:</Text>
+                            <TextInput placeholder='Título' value={this.state.titulo} 
+                            style={styles.input} 
+                            onChangeText={titulo => this.setState({ titulo })} />
+                            <View style={styles.button2}>
+                                <Text style={styles.buttonText2}>
+                                    <Icon name="folder" size={20} /> Selecionar imagem
+                                </Text>
+                            </View>
+                            <TextInput placeholder='Mensagem' value={this.state.mensagem} 
+                            style={styles.input2} 
+                            multiline onChangeText={mensagem => this.setState({ mensagem })} value={this.state.mensagem} />
+                            <Button title='Enviar'
+                                color='#009FEF'/>
+                        </View>
+                    </ScrollView>
+                </SafeAreaView>
+            </KeyboardAvoidingView>
         )
     }
 }
 
 const styles = StyleSheet.create({
+    container:{
+        flex: 1
+    },
     background:{
         flexGrow: 1,
         width: '100%',
