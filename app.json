@@ -6,11 +6,11 @@
     "sdkVersion": "36.0.0",
     "android": {
       "package": "com.devduo.bikerapp",
-      "versionCode": 1
+      "versionCode": 3
     },
     "ios": {
       "bundleIdentifier": "com.devduo.bikerapp",
-      "buildNumber": "1.0.0"
+      "buildNumber": "1.0.2"
     },
     "platforms": [
       "ios",

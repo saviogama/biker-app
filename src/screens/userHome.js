@@ -3,6 +3,7 @@ import { Text, StyleSheet, View, ScrollView, SafeAreaView } from 'react-native';
 import { Avatar, Button, ThemeProvider, Header } from 'react-native-elements';
 import commonStyles from '../commonStyles'
 import { DrawerActions } from 'react-navigation-drawer';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 const theme = {
     Button: {
@@ -18,6 +19,7 @@ export default class userHome extends Component {
         return (
             <SafeAreaView style={styles.background}>
                 <Header
+                    leftComponent={<Icon name='bars' size={21} style={styles.icon} onPress={() => this.props.navigation.dispatch(DrawerActions.openDrawer()) } />}
                     centerComponent={{ text: 'Painel de Controle', style: { color: commonStyles.colors.white, fontSize: 18, fontWeight: 'bold' } }}
                     containerStyle={{
                         backgroundColor: commonStyles.colors.darkGray,
@@ -30,12 +32,6 @@ export default class userHome extends Component {
                         <Text style={styles.titleText}>
                             Motoclube 1
                         </Text>
-                    </View>
-                    <View style={styles.button}>
-                        <Avatar rounded icon={{name: 'bars', color: 'black', type: 'font-awesome'}}/>
-                        <ThemeProvider theme={theme}>
-                            <Button title='Menu' type='clear'  onPress={() => this.props.navigation.dispatch(DrawerActions.openDrawer()) }/>
-                        </ThemeProvider>
                     </View>
                     <View style={styles.button}>
                         <Avatar rounded icon={{name: 'pencil', color: 'black', type: 'font-awesome'}}/>
@@ -94,5 +90,9 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'flex-start',
         alignItems: 'center'
+    },
+    icon: {
+        color: commonStyles.colors.white,
+        marginLeft: 10
     }
 })
