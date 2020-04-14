@@ -1,6 +1,7 @@
 import React from 'react';
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
+import { createBottomTabNavigator } from 'react-navigation-tabs';
 import { createDrawerNavigator, DrawerItems, DrawerActions } from 'react-navigation-drawer';
 import { Text, View } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome5';
@@ -24,6 +25,24 @@ import userProfile from './screens/userProfile';
 import Feed from './screens/feed';
 import commonStyles from './commonStyles';
 
+const menuScreensTab = {
+  Feed: {
+    screen: Feed,
+    navigationOptions:{
+      tabBarIcon: ({tintColor}) => <Icon name="home" size={20} color={tintColor}/>}
+  },
+  Notificações: {
+    screen: Notifications,
+    navigationOptions:{
+      tabBarIcon: ({tintColor}) => <Icon name="bell" size={20} color={tintColor}/>}
+  },
+  Mensagens:{
+    screen: Messages,
+    navigationOptions:{
+      tabBarIcon: ({tintColor}) => <Icon name="envelope" size={20} color={tintColor}/>}
+  }
+}
+
 const DrawerContent = (props) => (
   <View>
     <View
@@ -42,13 +61,18 @@ const DrawerContent = (props) => (
   </View>
 )
 
-const menuScreens = {
-  Feed:{
+const menuScreensDrawer = {
+  Home:{
     name: 'Feed',
-    screen: Feed,
+    screen: createBottomTabNavigator(menuScreensTab, {
+      initialRouteName: 'Feed',
+      activeTintColor: commonStyles.colors.blue,
+      inactiveTintColor: commonStyles.colors.gray,
+      tabBarOptions:{ style: { backgroundColor: commonStyles.colors.darkGray} }
+    }),
     navigationOptions:{
       title: 'Feed',
-      drawerIcon: (<Icon name="home" size={20} />)
+      drawerIcon: (<Icon name="home" size={20}/>)
     }
   },
   userHome:{
@@ -67,22 +91,6 @@ const menuScreens = {
       drawerIcon: (<Icon name="calendar" size={20} />)
     }
   },
-  Notifications:{
-    name: 'Notifications',
-    screen: Notifications,
-    navigationOptions:{
-      title: 'Notificações',
-      drawerIcon: (<Icon name="bell" size={20} />)
-    }
-  },
-  Messages:{
-    name: 'Messages',
-    screen: Messages,
-    navigationOptions:{
-      title: 'Mensagens',
-      drawerIcon: (<Icon name="envelope" size={20} />)
-    }
-  },
   Financial:{
     name: 'Financial',
     screen: Financial,
@@ -99,7 +107,7 @@ const menuScreens = {
       drawerIcon: (<Icon name="cog" size={20} />)
     }
   },
-  userrofile:{
+  userProfile:{
     name: 'userProfile',
     screen: userProfile,
     navigationOptions:{
@@ -109,7 +117,8 @@ const menuScreens = {
   }
 }
 
-const menuRoutes = createDrawerNavigator(menuScreens, {
+const menuRoutesDrawer = createDrawerNavigator(menuScreensDrawer, {
+  initialRouteName: 'Home',
   contentComponent: DrawerContent
 });
 
@@ -324,7 +333,7 @@ const mainScreens = {
     },
     Feed: {
       name: 'Feed',
-      screen: menuRoutes,
+      screen: menuRoutesDrawer,
       navigationOptions: {
         headerShown: false
       }

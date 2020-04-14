@@ -4,9 +4,20 @@ import backgroundImage from '../../assets/imgs/bikerappbg.png'
 import commonStyles from '../commonStyles'
 
 export default class Main extends Component {
+
+    componentDidMount(){
+        this.timeoutHandle = setTimeout(()=>{
+            this.props.navigation.navigate('Auth')
+        }, 1500);
+   }
+
+   componentWillUnmount(){
+        clearTimeout(this.timeoutHandle);
+   }
+
     render() {
         return (
-            <ImageBackground source={backgroundImage} style={styles.background} >
+            <ImageBackground source={backgroundImage} style={styles.background}>
                 <Text style={styles.title} onPress={() => this.props.navigation.navigate('Auth')}>
                     BikerApp
                 </Text>
