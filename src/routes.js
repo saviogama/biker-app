@@ -25,6 +25,7 @@ import userProfile from './screens/userProfile';
 import Feed from './screens/feed';
 import commonStyles from './commonStyles';
 
+/*
 const menuScreensTab = {
   Feed: {
     screen: Feed,
@@ -42,6 +43,14 @@ const menuScreensTab = {
       tabBarIcon: ({tintColor}) => <Icon name="envelope" size={20} color={tintColor}/>}
   }
 }
+
+createBottomTabNavigator(menuScreensTab, {
+      initialRouteName: 'Feed',
+      activeTintColor: commonStyles.colors.blue,
+      inactiveTintColor: commonStyles.colors.gray,
+      tabBarOptions:{ style: { backgroundColor: commonStyles.colors.darkGray} }
+    }),
+*/
 
 const DrawerContent = (props) => (
   <View>
@@ -64,12 +73,7 @@ const DrawerContent = (props) => (
 const menuScreensDrawer = {
   Home:{
     name: 'Feed',
-    screen: createBottomTabNavigator(menuScreensTab, {
-      initialRouteName: 'Feed',
-      activeTintColor: commonStyles.colors.blue,
-      inactiveTintColor: commonStyles.colors.gray,
-      tabBarOptions:{ style: { backgroundColor: commonStyles.colors.darkGray} }
-    }),
+    screen: Feed,
     navigationOptions:{
       title: 'Feed',
       drawerIcon: (<Icon name="home" size={20}/>)
