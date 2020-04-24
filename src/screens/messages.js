@@ -1,41 +1,30 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, ScrollView, SafeAreaView } from 'react-native';
-import { DrawerActions } from 'react-navigation-drawer';
-import Icon from 'react-native-vector-icons/FontAwesome';
-import { Header } from 'react-native-elements'
+import { StyleSheet, ScrollView, SafeAreaView, Text } from 'react-native';
 import commonStyles from '../commonStyles'
 
 export default class Messages extends Component {
-    render() {
-        return (
-          <SafeAreaView style={styles.background}>
-            <Header
-              leftComponent={<Icon name='bars' size={21} style={styles.icon} onPress={() => this.props.navigation.dispatch(DrawerActions.openDrawer()) } />}
-              centerComponent={{ text: 'Mensagens', style: { color: commonStyles.colors.white, fontSize: 18, fontWeight: 'bold' } }}
-              containerStyle={{
-              backgroundColor: commonStyles.colors.darkGray,
-              justifyContent: 'space-around',
-              }}
-            />
-            <ScrollView style={styles.scrollview}>
-              <Text style={styles.title}>
-                Em construção c=
-              </Text>
-            </ScrollView>
-          </SafeAreaView>
-        )
-    }
+  render() {
+    return (
+      <SafeAreaView style={styles.background}>
+        <ScrollView style={styles.scrollview}>
+          <Text style={styles.title}>
+            Em construção c=
+          </Text>
+        </ScrollView>
+      </SafeAreaView>
+    )
+  }
 }
 
 const styles = StyleSheet.create({
-  background:{
-      flex: 1,
-      width: '100%'
+  background: {
+    flex: 1,
+    width: '100%'
   },
-  scrollview:{
+  scrollview: {
     width: '100%',
   },
-  title:{
+  title: {
     color: commonStyles.colors.black,
     alignItems: 'center',
     justifyContent: 'center',
@@ -44,5 +33,5 @@ const styles = StyleSheet.create({
   icon: {
     color: commonStyles.colors.white,
     marginLeft: 10
-}
+  }
 })

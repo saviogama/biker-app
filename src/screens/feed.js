@@ -1,43 +1,38 @@
 import React, { Component } from 'react';
-import { StyleSheet, ScrollView, SafeAreaView } from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
-import { DrawerActions } from 'react-navigation-drawer';
-import { Header } from 'react-native-elements'
+import { StyleSheet, ScrollView, SafeAreaView, Text } from 'react-native';
 import commonStyles from '../commonStyles'
 import Notification from '../components/notificationInput'
 import Event from '../components/eventCardInput'
+import HeaderTabs from '../components/headerTabs'
+import FooterTabs from '../components/footerTabs'
 
 export default class Feed extends Component {
+
     render() {
+
         return (
             <SafeAreaView style={styles.background}>
-                <Header
-                    leftComponent={<Icon name='bars' size={21} style={styles.icon} onPress={() => this.props.navigation.dispatch(DrawerActions.openDrawer()) } />}
-                    centerComponent={{ text: 'Feed', style: { color: commonStyles.colors.white, fontSize: 18, fontWeight: 'bold' } }}
-                    containerStyle={{
-                    backgroundColor: commonStyles.colors.darkGray,
-                    justifyContent: 'space-around',
-                    }}
-                />
+                <HeaderTabs>Feed</HeaderTabs>
                 <ScrollView style={styles.scrollview}>
-                    <Notification/>
-                    <Event/>
-                    <Event/>
-                    <Notification/>
-                    <Notification/>
-                    <Event/>
+                    <Notification />
+                    <Event />
+                    <Event />
+                    <Notification />
+                    <Notification />
+                    <Event />
                 </ScrollView>
+                <FooterTabs></FooterTabs>
             </SafeAreaView>
         )
     }
 }
 
 const styles = StyleSheet.create({
-    background:{
+    background: {
         flex: 1,
         width: '100%'
     },
-    scrollview:{
+    scrollview: {
         width: '100%'
     },
     icon: {
