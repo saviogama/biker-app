@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, ScrollView, SafeAreaView, Text } from 'react-native';
+import { StyleSheet, ScrollView, SafeAreaView } from 'react-native';
 import commonStyles from '../commonStyles'
 import Notification from '../components/notificationInput'
 import Event from '../components/eventCardInput'
@@ -7,12 +7,11 @@ import HeaderTabs from '../components/headerTabs'
 import FooterTabs from '../components/footerTabs'
 
 export default class Feed extends Component {
-
     render() {
-
+        const { navigation } = this.props;
         return (
             <SafeAreaView style={styles.background}>
-                <HeaderTabs>Feed</HeaderTabs>
+                <HeaderTabs name={'Home'} navigate={navigation} />
                 <ScrollView style={styles.scrollview}>
                     <Notification />
                     <Event />
@@ -21,7 +20,7 @@ export default class Feed extends Component {
                     <Notification />
                     <Event />
                 </ScrollView>
-                <FooterTabs></FooterTabs>
+                <FooterTabs navigate={navigation} />
             </SafeAreaView>
         )
     }

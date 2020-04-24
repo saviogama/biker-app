@@ -71,11 +71,11 @@ const DrawerContent = (props) => (
 )
 
 const menuScreensDrawer = {
-  Home:{
+  Feed:{
     name: 'Feed',
     screen: Feed,
     navigationOptions:{
-      title: 'Feed',
+      title: 'Home',
       drawerIcon: (<Icon name="home" size={20}/>)
     }
   },
@@ -122,7 +122,7 @@ const menuScreensDrawer = {
 }
 
 const menuRoutesDrawer = createDrawerNavigator(menuScreensDrawer, {
-  initialRouteName: 'Home',
+  initialRouteName: 'Feed',
   contentComponent: DrawerContent
 });
 

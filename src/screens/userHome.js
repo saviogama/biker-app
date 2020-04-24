@@ -2,60 +2,65 @@ import React, { Component } from 'react';
 import { StyleSheet, View, Text, ScrollView, SafeAreaView } from 'react-native';
 import { Avatar, ThemeProvider, Button } from 'react-native-elements';
 import commonStyles from '../commonStyles'
+import HeaderTabs from '../components/headerTabs'
+import FooterTabs from '../components/footerTabs'
 
 const theme = {
     Button: {
-      titleStyle: {
-        color: 'black',
-        fontSize: 15
-      },
+        titleStyle: {
+            color: 'black',
+            fontSize: 15
+        },
     },
 };
 
 export default class userHome extends Component {
     render() {
+        const { navigation } = this.props;
         return (
             <SafeAreaView style={styles.background}>
+                <HeaderTabs name={'Painel de Controle'} navigate={navigation} />
                 <ScrollView style={styles.scrollview}>
                     <View style={styles.title}>
-                        <Avatar size='large' rounded title='MC'/>
+                        <Avatar size='large' rounded title='MC' />
                         <Text style={styles.titleText}>
                             Motoclube 1
                         </Text>
                     </View>
                     <View style={styles.button}>
-                        <Avatar rounded icon={{name: 'pencil', color: 'black', type: 'font-awesome'}}/>
+                        <Avatar rounded icon={{ name: 'pencil', color: 'black', type: 'font-awesome' }} />
                         <ThemeProvider theme={theme}>
-                            <Button title='Escrever Notificação' type='clear' onPress={() => this.props.navigation.navigate('newNotification')}/>
+                            <Button title='Escrever Notificação' type='clear' onPress={() => this.props.navigation.navigate('newNotification')} />
                         </ThemeProvider>
                     </View>
                     <View style={styles.button}>
-                        <Avatar rounded icon={{name: 'calendar', color: 'black', type: 'font-awesome'}}/>
+                        <Avatar rounded icon={{ name: 'calendar', color: 'black', type: 'font-awesome' }} />
                         <ThemeProvider theme={theme}>
-                            <Button title='Criar Evento' type='clear' onPress={() => this.props.navigation.navigate('newEvent')}/>
+                            <Button title='Criar Evento' type='clear' onPress={() => this.props.navigation.navigate('newEvent')} />
                         </ThemeProvider>
                     </View>
                     <View style={styles.button}>
-                        <Avatar rounded icon={{name: 'bar-chart', color: 'black', type: 'font-awesome'}}/>
+                        <Avatar rounded icon={{ name: 'bar-chart', color: 'black', type: 'font-awesome' }} />
                         <ThemeProvider theme={theme}>
-                            <Button title='Dados sobre Eventos' type='clear' onPress={() => this.props.navigation.navigate('eventData')}/>
+                            <Button title='Dados sobre Eventos' type='clear' onPress={() => this.props.navigation.navigate('eventData')} />
                         </ThemeProvider>
                     </View>
                 </ScrollView>
+                <FooterTabs navigate={navigation} />
             </SafeAreaView>
         )
     }
 }
 
 const styles = StyleSheet.create({
-    background:{
+    background: {
         flex: 1,
         width: '100%'
     },
-    scrollview:{
+    scrollview: {
         width: '100%',
     },
-    title:{
+    title: {
         marginTop: 15,
         marginRight: 50,
         marginLeft: 50,
@@ -66,14 +71,14 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center'
     },
-    titleText:{
+    titleText: {
         color: commonStyles.colors.black,
         fontSize: 30,
         marginLeft: 15,
         justifyContent: 'center',
         alignItems: 'center'
     },
-    button:{
+    button: {
         marginLeft: '18%',
         paddingVertical: 15,
         paddingHorizontal: 10,
