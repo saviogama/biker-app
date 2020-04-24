@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import { Text, StyleSheet, View, ScrollView, SafeAreaView } from 'react-native';
-import { Avatar, Button, ThemeProvider, Header } from 'react-native-elements';
+import { StyleSheet, View, Text, ScrollView, SafeAreaView } from 'react-native';
+import { Avatar, ThemeProvider, Button } from 'react-native-elements';
 import commonStyles from '../commonStyles'
-import { DrawerActions } from 'react-navigation-drawer';
-import Icon from 'react-native-vector-icons/FontAwesome';
 
 const theme = {
     Button: {
@@ -18,14 +16,6 @@ export default class userHome extends Component {
     render() {
         return (
             <SafeAreaView style={styles.background}>
-                <Header
-                    leftComponent={<Icon name='bars' size={21} style={styles.icon} onPress={() => this.props.navigation.dispatch(DrawerActions.openDrawer()) } />}
-                    centerComponent={{ text: 'Painel de Controle', style: { color: commonStyles.colors.white, fontSize: 18, fontWeight: 'bold' } }}
-                    containerStyle={{
-                        backgroundColor: commonStyles.colors.darkGray,
-                        justifyContent: 'space-around',
-                    }}
-                />
                 <ScrollView style={styles.scrollview}>
                     <View style={styles.title}>
                         <Avatar size='large' rounded title='MC'/>

@@ -2,7 +2,7 @@ Arguments:
   C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add native-base --save
 
 PATH: 
-  C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;C:\Users\Savio\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Python 3.8;C:\Maven\bin;C:\Program Files\Java\jdk1.8.0_231\bin;C:\Program Files\Git\cmd;C:\Program Files (x86)\Yarn\bin\;C:\Users\Savio\AppData\Roaming\npm;C:\Users\Savio\AppData\Local\Programs\Python\Python38-32\Scripts\;C:\Users\Savio\AppData\Local\Programs\Python\Python38-32\;C:\Users\Savio\AppData\Local\Microsoft\WindowsApps;C:\Users\Savio\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Savio\AppData\Local\Yarn\bin;C:\Users\Savio\AppData\Local\GitHubDesktop\bin
+  C:\Users\Savio\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\Savio\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\nodejs;C:\ProgramData\chocolatey\bin;C:\Users\Savio\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Python 3.8;C:\Maven\bin;C:\Program Files\Java\jdk1.8.0_231\bin;C:\Program Files\Git\cmd;C:\Program Files (x86)\Yarn\bin;C:\Users\Savio\AppData\Roaming\npm;C:\Users\Savio\AppData\Local\Programs\Python\Python38-32\Scripts;C:\Users\Savio\AppData\Local\Programs\Python\Python38-32;C:\Users\Savio\AppData\Local\Microsoft\WindowsApps;C:\Users\Savio\AppData\Roaming\npm;C:\Users\Savio\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Savio\AppData\Local\Yarn\bin;C:\Users\Savio\AppData\Local\GitHubDesktop\bin;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
 
 Yarn version: 
   1.22.4
@@ -14,7 +14,7 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: EPERM: operation not permitted, unlink 'C:\Users\Savio\Desktop\biker-app\node_modules\@expo\.xdl.DELETE\binaries\windows\adb\adb.exe'
+  Error: EPERM: operation not permitted, unlink 'C:\Users\Savio\Desktop\biker-app\node_modules\@expo\xdl\binaries\windows\adb\adb.exe'
 
 npm manifest: 
   {
