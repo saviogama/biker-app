@@ -4,18 +4,18 @@ import { DrawerActions } from 'react-navigation-drawer';
 import customTheme from '../customTheme'
 
 export default class HeaderTabs extends Component {
-
+    
     render() {
         return (
             <StyleProvider style={getTheme(customTheme)}>
                 <Header>
                     <Left>
                         <Button transparent>
-                            <Icon name='menu' onPress={() => this.props.navigation.dispatch(DrawerActions.openDrawer())} />
+                            <Icon name='menu' onPress={() => this.props.navigate.dispatch(DrawerActions.openDrawer())} />
                         </Button>
                     </Left>
                     <Body>
-                        <Title>{this.props.children}</Title>
+                        <Title>{this.props.name}</Title>
                     </Body>
                 </Header>
             </StyleProvider>
