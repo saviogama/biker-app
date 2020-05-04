@@ -1,16 +1,24 @@
 import React, { Component } from 'react';
-import { StyleSheet, ScrollView, SafeAreaView, Text } from 'react-native';
+import { StyleSheet, ScrollView, SafeAreaView } from 'react-native';
+import { Button, Text, Icon } from 'native-base';
+import UserMessages from '../components/userMessages'
 import commonStyles from '../commonStyles'
+import FooterTabs from '../components/footerTabs'
 
 export default class Messages extends Component {
   render() {
+    const { navigation } = this.props;
     return (
       <SafeAreaView style={styles.background}>
         <ScrollView style={styles.scrollview}>
-          <Text style={styles.title}>
-            Em construção c=
-          </Text>
+          <UserMessages />
+          <UserMessages />
+          <UserMessages />
         </ScrollView>
+        <Button rounded info style={styles.button}>
+          <Icon name='add' />
+        </Button>
+        <FooterTabs navigate={navigation} />
       </SafeAreaView>
     )
   }
@@ -24,14 +32,12 @@ const styles = StyleSheet.create({
   scrollview: {
     width: '100%',
   },
-  title: {
-    color: commonStyles.colors.black,
-    alignItems: 'center',
-    justifyContent: 'center',
-    fontSize: 30
-  },
-  icon: {
-    color: commonStyles.colors.white,
-    marginLeft: 10
+  button: {
+    position: 'absolute',
+    bottom: 0,
+    right: 0,
+    marginRight: 10,
+    marginBottom: 75,
+    width: '13%'
   }
 })
