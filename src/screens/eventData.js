@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 import { StyleSheet, ScrollView, SafeAreaView } from 'react-native';
-import Card from '../components/eventDataInput'
+import EventDataInput from '../components/eventDataInput'
 
 export default class eventData extends Component {
     render() {
+        const { navigation } = this.props;
         return (
             <SafeAreaView style={styles.background}>
             <ScrollView style={styles.scrollview}>
-                <Card/>
-                <Card/>
-                <Card/>
+                <EventDataInput navigate={navigation} />
+                <EventDataInput navigate={navigation} />
+                <EventDataInput navigate={navigation} />
             </ScrollView>
             </SafeAreaView>
         )
