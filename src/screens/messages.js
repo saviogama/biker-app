@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, ScrollView, SafeAreaView } from 'react-native';
 import { Button, Text, Icon } from 'native-base';
-import UserMessages from '../components/userMessages'
-import commonStyles from '../commonStyles'
+import MessagesInput from '../components/messagesInput'
 import FooterTabs from '../components/footerTabs'
 
 export default class Messages extends Component {
@@ -11,11 +10,17 @@ export default class Messages extends Component {
     return (
       <SafeAreaView style={styles.background}>
         <ScrollView style={styles.scrollview}>
-          <UserMessages />
-          <UserMessages />
-          <UserMessages />
+          <MessagesInput />
+          <MessagesInput />
+          <MessagesInput />
+          <MessagesInput />
+          <MessagesInput />
+          <MessagesInput />
+          <MessagesInput />
+          <MessagesInput />
+          <MessagesInput />
         </ScrollView>
-        <Button rounded info style={styles.button}>
+        <Button rounded info style={styles.button} onPress={() => this.props.navigation.navigate('searchContacts')}>
           <Icon name='add' />
         </Button>
         <FooterTabs navigate={navigation} />

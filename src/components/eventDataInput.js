@@ -5,47 +5,50 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 const theme = {
     Button: {
-      titleStyle: {
-        color: 'black',
-      },
+        titleStyle: {
+            color: 'black',
+        },
     },
 };
 
-export default props => {
-    return (
-        <Card
-            containerStyle={{marginBottom: 3}}
-            title='99º TITULO LONGO DE CARUARU-PE'
+export default class EventDataInput extends Component {
+
+    render() {
+        return (
+            <Card
+                containerStyle={{ marginBottom: 3 }}
+                title='99º TITULO LONGO DE CARUARU-PE'
             >
-            <View style={styles.button}>
-                <Avatar rounded icon={{name: 'user', color: 'black', type: 'font-awesome'}}/>
-                <Badge
-                    value="9" status="primary"
-                    containerStyle={{ position: 'absolute', top: 8 }}
-                />
-                <Text style={{fontSize: 16, fontWeight: 'bold', paddingHorizontal: 10, marginRight: 30}}>Confirmados</Text>
-                <Icon name={'calendar'} size={20} />
-                <Text style={{fontSize: 15, paddingHorizontal: 10}}>09/09</Text>
-            </View>
-            <View style={styles.button}>
-                <Avatar rounded icon={{name: 'user', color: 'gray', type: 'font-awesome'}}/>
-                <Badge
-                    value="9" status="primary"
-                    containerStyle={{ position: 'absolute', top: 12 }}
-                />
-                <ThemeProvider theme={theme}>
-                    <Button title='Não confirmados' type='clear' disabled/>
-                </ThemeProvider> 
-            </View>
-            <Button
-                buttonStyle={{borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0}}
-                title='Ver detalhes'/>
-        </Card>
-    )
+                <View style={styles.button}>
+                    <Avatar rounded icon={{ name: 'user', color: 'black', type: 'font-awesome' }} />
+                    <Badge
+                        value="9" status="primary"
+                        containerStyle={{ position: 'absolute', top: 8 }}
+                    />
+                    <Text style={{ fontSize: 16, fontWeight: 'bold', paddingHorizontal: 10, marginRight: 30 }}>Confirmados</Text>
+                    <Icon name={'calendar'} size={20} />
+                    <Text style={{ fontSize: 15, paddingHorizontal: 10 }}>09/09</Text>
+                </View>
+                <View style={styles.button}>
+                    <Avatar rounded icon={{ name: 'user', color: 'gray', type: 'font-awesome' }} />
+                    <Badge
+                        value="9" status="primary"
+                        containerStyle={{ position: 'absolute', top: 12 }}
+                    />
+                    <ThemeProvider theme={theme}>
+                        <Button title='Não confirmados' type='clear' disabled />
+                    </ThemeProvider>
+                </View>
+                <Button onPress={() => this.props.navigate.navigate('eventDataDetails')}
+                    buttonStyle={{ borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0 }}
+                    title='Ver detalhes' />
+            </Card>
+        )
+    }
 }
 
 const styles = StyleSheet.create({
-    button:{
+    button: {
         paddingVertical: 15,
         paddingHorizontal: 10,
         flexDirection: 'row',
