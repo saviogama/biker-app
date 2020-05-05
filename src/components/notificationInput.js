@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, Text } from 'react-native';
-import { Card, Avatar, Button, ThemeProvider, Badge } from 'react-native-elements';
+import { Thumbnail } from 'native-base';
+import { Card } from 'react-native-elements';
 import commonStyles from '../commonStyles'
 
 const theme = {
@@ -18,7 +19,7 @@ export default props => {
             containerStyle={{backgroundColor: commonStyles.colors.blue, marginBottom: 3}}
             >
             <View style={styles.button}>
-                <Avatar rounded size='medium' icon={{name: 'user', color: 'black', type: 'font-awesome'}}/>
+                <Thumbnail source={{ uri: 'https://jpimg.com.br/uploads/2019/05/john-wick-1024x576.jpg' }} />
                 <Text style={styles.text}>
                     John Wick
                 </Text>

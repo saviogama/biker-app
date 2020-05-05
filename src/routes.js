@@ -23,6 +23,7 @@ import Notifications from './screens/notifications';
 import Messages from './screens/messages';
 import userProfile from './screens/userProfile';
 import searchContacts from './screens/searchContacts';
+import userMessages from './screens/userMessages';
 import Feed from './screens/feed';
 import commonStyles from './commonStyles';
 
@@ -326,6 +327,21 @@ const mainScreens = {
       screen: searchContacts,
       navigationOptions: {
           title: 'Contatos',
+          headerTintColor: commonStyles.colors.white,
+          headerStyle: {
+            backgroundColor: commonStyles.colors.darkGray,
+          },
+          headerTitleStyle: {
+            fontSize: 18,
+            color: commonStyles.colors.white
+          },
+      }
+    },
+    userMessages: {
+      name: 'userMessages',
+      screen: userMessages,
+      navigationOptions: {
+          title: 'Mensagens',
           headerTintColor: commonStyles.colors.white,
           headerStyle: {
             backgroundColor: commonStyles.colors.darkGray,

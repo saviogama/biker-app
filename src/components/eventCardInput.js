@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
+import { Thumbnail } from 'native-base';
 import { Card, Avatar, Button, ThemeProvider, Badge } from 'react-native-elements';
 
 const theme = {
@@ -18,7 +19,7 @@ export default props => {
             title='99º TITULO LONGO DE CARUARU-PE'
             >
             <View style={styles.button}>
-                <Avatar rounded size='large' icon={{name: 'genderless', color: 'black', type: 'font-awesome'}}/>
+                <Thumbnail large source={{ uri: 'https://blog.masttermoto.com.br/wp-content/uploads/2018/11/saiba-o-que-e-um-moto-clube-e-quais-sao-os-mais-conhecidos-do-brasil.jpeg' }} />
                 <Text style={styles.text}>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
                 </Text>

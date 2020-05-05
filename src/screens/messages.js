@@ -10,15 +10,15 @@ export default class Messages extends Component {
     return (
       <SafeAreaView style={styles.background}>
         <ScrollView style={styles.scrollview}>
-          <MessagesInput />
-          <MessagesInput />
-          <MessagesInput />
-          <MessagesInput />
-          <MessagesInput />
-          <MessagesInput />
-          <MessagesInput />
-          <MessagesInput />
-          <MessagesInput />
+          <MessagesInput navigate={navigation} />
+          <MessagesInput navigate={navigation} />
+          <MessagesInput navigate={navigation} />
+          <MessagesInput navigate={navigation} />
+          <MessagesInput navigate={navigation} />
+          <MessagesInput navigate={navigation} />
+          <MessagesInput navigate={navigation} />
+          <MessagesInput navigate={navigation} />
+          <MessagesInput navigate={navigation} />
         </ScrollView>
         <Button rounded info style={styles.button} onPress={() => this.props.navigation.navigate('searchContacts')}>
           <Icon name='add' />
