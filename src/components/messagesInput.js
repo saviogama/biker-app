@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { StyleSheet } from 'react-native';
-import { Card, CardItem, Text, Right } from "native-base";
-import { Avatar, Badge } from 'react-native-elements';
+import { ListItem, Left, Body, Right, Thumbnail, Text } from 'native-base';
+import { Badge } from 'react-native-elements';
 
 const theme = {
     Button: {
@@ -12,22 +12,27 @@ const theme = {
     },
 };
 
-export default props => {
-    return (
-        <Card style={styles.button}>
-            <CardItem>
-                <Avatar rounded size='medium' icon={{ name: 'user', color: 'black', type: 'font-awesome' }} />
-                <Badge
-                    value="3" status="primary"
-                    containerStyle={{ position: 'absolute', top: 12, left: 9 }}
-                />
-                <Text style={styles.text}>John Wick</Text>
+export default class MessagesInput extends Component {
+    render() {
+        return (
+            <ListItem avatar onPress={() => this.props.navigate.navigate('userMessages')}>
+                <Left>
+                    <Thumbnail source={{ uri: 'https://jpimg.com.br/uploads/2019/05/john-wick-1024x576.jpg' }} />
+                    <Badge
+                        value="3" status="primary"
+                        containerStyle={{ position: 'absolute', top: 12, left: 1 }}
+                    />
+                </Left>
+                <Body>
+                    <Text>John Wick</Text>
+                    <Text note style={styles.text}>Você possui novas mensagens</Text>
+                </Body>
                 <Right>
-                    <Text>1h ago</Text>
+                    <Text note>09:09</Text>
                 </Right>
-            </CardItem>
-        </Card>
-    )
+            </ListItem>
+        )
+    }
 }
 
 const styles = StyleSheet.create({
@@ -35,6 +40,6 @@ const styles = StyleSheet.create({
         margin: 15
     },
     text: {
-        marginLeft: 10
+        marginBottom: 10
     }
 })

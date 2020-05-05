@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, Text } from 'react-native';
-import { ListItem, Avatar } from 'react-native-elements'
+import { Thumbnail } from 'native-base';
+import { ListItem } from 'react-native-elements'
 import commonStyles from '../commonStyles'
 
 const list = [
@@ -31,7 +32,7 @@ export default class userConfig extends Component {
         return (
             <View style={styles.background}>
                 <View style={styles.profile}>
-                    <Avatar size= 'large' rounded icon={{name: 'user', color: 'black', type: 'font-awesome'}}/>
+                    <Thumbnail large source={{ uri: 'https://jpimg.com.br/uploads/2019/05/john-wick-1024x576.jpg' }} />
                     <Text style={styles.userName}>
                         John Wick
                     </Text>
