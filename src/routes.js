@@ -1,8 +1,7 @@
 import React from 'react';
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
-import { createBottomTabNavigator } from 'react-navigation-tabs';
-import { createDrawerNavigator, DrawerItems, DrawerActions } from 'react-navigation-drawer';
+import { createDrawerNavigator, DrawerItems } from 'react-navigation-drawer';
 import { Text, View } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import 'react-native-gesture-handler'
@@ -26,33 +25,6 @@ import searchContacts from './screens/searchContacts';
 import userMessages from './screens/userMessages';
 import Feed from './screens/feed';
 import commonStyles from './commonStyles';
-
-/*
-const menuScreensTab = {
-  Feed: {
-    screen: Feed,
-    navigationOptions:{
-      tabBarIcon: ({tintColor}) => <Icon name="home" size={20} color={tintColor}/>}
-  },
-  Notificações: {
-    screen: Notifications,
-    navigationOptions:{
-      tabBarIcon: ({tintColor}) => <Icon name="bell" size={20} color={tintColor}/>}
-  },
-  Mensagens:{
-    screen: Messages,
-    navigationOptions:{
-      tabBarIcon: ({tintColor}) => <Icon name="envelope" size={20} color={tintColor}/>}
-  }
-}
-
-createBottomTabNavigator(menuScreensTab, {
-      initialRouteName: 'Feed',
-      activeTintColor: commonStyles.colors.blue,
-      inactiveTintColor: commonStyles.colors.gray,
-      tabBarOptions:{ style: { backgroundColor: commonStyles.colors.darkGray} }
-    }),
-*/
 
 const DrawerContent = (props) => (
   <View>
